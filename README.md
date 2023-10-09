@@ -9,9 +9,7 @@ Clona este repositorio en tu máquina local.
 git clone <URL del repositorio>
 Navega al directorio del proyecto.
 
-cd automatizacion-con-cypress
 Instala las dependencias necesarias.
-
 npm install
 
 ## Ejecución de las pruebas
