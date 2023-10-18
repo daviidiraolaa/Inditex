@@ -8,16 +8,17 @@ Este proyecto contiene pruebas automatizadas utilizando Cypress para una tienda 
 
 En este ejercicio, se realiza una petición HTTP para crear un usuario en la tienda de mascotas y luego se recupera su información.
 
-Código:
-```javascript
+
+```
 it("Crea un usuario y recupera sus datos", () => {
   // ...
 });
-
+```
 ## Ejercicio 2: Obtener y Listar Mascotas Vendidas
 En este ejercicio, se obtiene un JSON con mascotas vendidas y se listan los nombres de las mascotas.
-Código:
-```javascript
+
+
+```
 it("obtener y listar las mascotas", () => {
   // ...
 });
@@ -28,17 +29,18 @@ function getPets(petsData) {
 
 function listPets(petsList) {
   // ...
-}```
+}
+```
 
 ## Ejercicio 3: Tratamiento de Datos en APIs
 En este ejercicio, se crea una clase PetsHelper para procesar y contar las mascotas con el mismo nombre.
 
-Código:
-```javascript
+```
 it("obtener y listar las mascotas", () => {
   var petsHelper = new PetsHelper(petsList);
   petsHelper.getAllPets();
-});```
+});
+```
 
 ##Estructura de Directorios
 
@@ -49,8 +51,7 @@ e2e: Contiene la clase PetsHelper para el tercer ejercicio.
 
 ##Comandos Personalizados
 
-Código:
-```javascript
+```
 Cypress.Commands.add("setUsers", () => { ... });
 Cypress.Commands.add("getUserInfo", (userName) => { ... });
 Cypress.Commands.add("getPets", (status) => { ... });
