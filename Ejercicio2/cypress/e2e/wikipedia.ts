@@ -3,6 +3,8 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 const googleUrl = "https://www.google.com";
 const wikipediaUrl = "https://es.wikipedia.org";
 
+Cypress.config('pageLoadTimeout', 60000);
+
 Given("Configurar resolución de la pantalla", () => {
   // Configurar la resolución de la pantalla
   const viewportWidth = 1280; // Ancho deseado

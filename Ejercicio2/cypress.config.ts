@@ -3,12 +3,10 @@ import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import { createEsbuildPlugin } from "@badeball/cypress-cucumber-preprocessor/esbuild";
 
-
 async function setupNodeEvents(
   on: Cypress.PluginEvents,
   config: Cypress.PluginConfigOptions
 ): Promise<Cypress.PluginConfigOptions> {
-  // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
   await addCucumberPreprocessorPlugin(on, config);
   on('task', {
     log(message) {
@@ -23,11 +21,18 @@ async function setupNodeEvents(
     })
   );
 
-  // Make sure to return the config object as it might have been modified by the plugin.
   return config;
 }
 
 export default defineConfig({
+  env: {
+    ELECTRON_EXTRA_LAUNCH_ARGS: "--disable-gpu"
+  },
+  chromeWebSecurity: false,
+  retries: {
+    runMode: 4,
+    openMode: 4,
+  },
   e2e: {
     baseUrl: "https://google.es",
     viewportWidth: 1920,
